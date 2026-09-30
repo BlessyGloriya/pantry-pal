@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="PantryPal - Food Expiry and Pantry Tracker"
+    >
+
+    <title>PantryPal | Food Expiry Tracker</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PAGE LOADER
+    ====================================================== -->
+
+    <div class="page-loader" id="pageLoader">
+
+        <div class="loader-icon">
+            🍱
+        </div>
+
+        <h2>PantryPal</h2>
+
+        <p>Preparing your pantry...</p>
+
+        <div class="loader-line">
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FLOATING FOOD EMOJIS
+    ====================================================== -->
+
+    <div class="floating-foods" aria-hidden="true">
+
+        <span class="float-food food-1">🥑</span>
+        <span class="float-food food-2">🍅</span>
+        <span class="float-food food-3">🥕</span>
+        <span class="float-food food-4">🥛</span>
+        <span class="float-food food-5">🍎</span>
+        <span class="float-food food-6">🥦</span>
+        <span class="float-food food-7">🥚</span>
+        <span class="float-food food-8">🍓</span>
+        <span class="float-food food-9">🥔</span>
+        <span class="float-food food-10">🍌</span>
+
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!-- Logo -->
+
+            <a href="#home" class="logo">
+
+                <span class="logo-icon">
+                    🍱
+                </span>
+
+                <span class="logo-text">
+                    Pantry<span>Pal</span>
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="#home" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="#dashboard" class="nav-link">
+                    Dashboard
+                </a>
+
+                <a href="#add-food" class="nav-link">
+                    Add Food
+                </a>
+
+                <a href="#my-pantry" class="nav-link">
+                    My Pantry
+                </a>
+
+                <a href="#food-life" class="nav-link">
+                    Food Life
+                </a>
+
+            </nav>
+
+
+            <!-- Header Button -->
+
+            <button
+                type="button"
+                class="header-add-btn"
+                id="addFoodTopBtn"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Add Food
+            </button>
+
+
+            <!-- Mobile Menu -->
+
+            <button
+                type="button"
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Open menu"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HOME
+        ================================================== -->
+
+        <section class="hero-section" id="home">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="eyebrow">
+                        SMART FOOD TRACKER
+                    </span>
+
+                    <h1>
+                        Know your food.
+                        <br>
+                        <span>Waste less.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Keep track of what you bought, where you store it,
+                        and when it should be used — all in one simple pantry.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <button
+                            type="button"
+                            class="primary-btn"
+                            id="addFoodHeroBtn"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Add Food
+                        </button>
+
+                        <a
+                            href="#food-life"
+                            class="secondary-btn"
+                        >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Check Food Life
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Circular Quote -->
+
+                <div class="hero-visual">
+
+                    <div class="quote-circle">
+
+                        <div class="quote-food">
+                            🥕
+                        </div>
+
+                        <div class="quote-mark">
+                            “
+                        </div>
+
+                        <p>
+                            Fresh food,
+                            <br>
+                            better planning,
+                            <br>
+                            less waste.
+                        </p>
+
+                        <div class="quote-mark quote-end">
+                            ”
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section
+            class="section dashboard-section"
+            id="dashboard"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            YOUR PANTRY
+                        </span>
+
+                        <h2>
+                            Pantry Overview
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        A quick look at everything in your pantry.
+                    </p>
+
+                </div>
+
+
+                <!-- Dashboard Cards -->
+
+                <div class="dashboard-grid">
+
+
+                    <!-- Total -->
+
+                    <article class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            🍱
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                Total Items
+                            </span>
+
+                            <strong id="totalItems">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Fresh -->
+
+                    <article class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            🌿
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                Fresh
+                            </span>
+
+                            <strong id="freshItems">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Expiring -->
+
+                    <article class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            ⏳
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                Expiring Soon
+                            </span>
+
+                            <strong id="expiringItems">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Expired -->
+
+                    <article class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            ⚠️
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                Expired
+                            </span>
+
+                            <strong id="expiredItems">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ADD FOOD
+        ================================================== -->
+
+        <section
+            class="section add-food-section"
+            id="add-food"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            ADD TO PANTRY
+                        </span>
+
+                        <h2>
+                            Add Your Food
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Enter what you bought and PantryPal will
+                        estimate its storage life.
+                    </p>
+
+                </div>
+
+
+                <div class="form-card">
+
+                    <form id="foodForm">
+
+
+                        <!-- ===============================
+                             FOOD NAME
+                        ================================ -->
+
+                        <div class="form-group full-width">
+
+                            <label for="foodName">
+                                Food Name
+                            </label>
+
+                            <div class="input-with-icon">
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                                <input
+                                    type="text"
+                                    id="foodName"
+                                    name="foodName"
+                                    placeholder="Search food... e.g. Milk, Tomato, Chicken"
+                                    autocomplete="off"
+                                    required
+                                >
+
+                            </div>
+
+                            <!-- Auto suggestions -->
+
+                            <div
+                                class="food-suggestions"
+                                id="foodSuggestions"
+                            ></div>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             CATEGORY
+                        ================================ -->
+
+                        <div class="form-group">
+
+                            <label for="foodCategory">
+                                Category
+                            </label>
+
+                            <select
+                                id="foodCategory"
+                                name="foodCategory"
+                                required
+                            >
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="dairy">
+                                    Dairy
+                                </option>
+
+                                <option value="eggs">
+                                    Eggs
+                                </option>
+
+                                <option value="meat">
+                                    Meat
+                                </option>
+
+                                <option value="seafood">
+                                    Seafood
+                                </option>
+
+                                <option value="vegetables">
+                                    Vegetables
+                                </option>
+
+                                <option value="fruits">
+                                    Fruits
+                                </option>
+
+                                <option value="bakery">
+                                    Bakery
+                                </option>
+
+                                <option value="grains">
+                                    Grains
+                                </option>
+
+                                <option value="beverages">
+                                    Beverages
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             QUANTITY
+                        ================================ -->
+
+                        <div class="form-group">
+
+                            <label for="foodQuantity">
+                                Quantity
+                            </label>
+
+                            <div class="quantity-row">
+
+                                <input
+                                    type="number"
+                                    id="foodQuantity"
+                                    name="foodQuantity"
+                                    min="0"
+                                    step="0.01"
+                                    placeholder="e.g. 2"
+                                    required
+                                >
+
+                                <select
+                                    id="foodUnit"
+                                    name="foodUnit"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Unit
+                                    </option>
+
+                                    <option value="pieces">
+                                        Pieces
+                                    </option>
+
+                                    <option value="kg">
+                                        Kg
+                                    </option>
+
+                                    <option value="grams">
+                                        Grams
+                                    </option>
+
+                                    <option value="liters">
+                                        Liters
+                                    </option>
+
+                                    <option value="ml">
+                                        ml
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             PURCHASE DATE
+                        ================================ -->
+
+                        <div class="form-group">
+
+                            <label for="purchaseDate">
+                                Purchase Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="purchaseDate"
+                                name="purchaseDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ===============================
+                             STORAGE
+                        ================================ -->
+
+                        <div class="form-group">
+
+                            <label for="storageLocation">
+                                Storage Location
+                            </label>
+
+                            <select
+                                id="storageLocation"
+                                name="storageLocation"
+                                required
+                            >
+
+                                <option value="">
+                                    Where will you store it?
+                                </option>
+
+                                <option value="room">
+                                    🏠 Room Temperature
+                                </option>
+
+                                <option value="refrigerator">
+                                    🧊 Refrigerator
+                                </option>
+
+                                <option value="freezer">
+                                    ❄️ Freezer
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             ACTUAL EXPIRY DATE
+                        ================================ -->
+
+                        <div class="form-group">
+
+                            <label for="expiryDate">
+
+                                Actual Expiry Date
+
+                                <span class="optional">
+                                    Optional
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="date"
+                                id="expiryDate"
+                                name="expiryDate"
+                            >
+
+                            <small class="field-help">
+                                If the package has an expiry date,
+                                you can enter it. Otherwise,
+                                PantryPal will estimate it.
+                            </small>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             FOOD LIFE PREVIEW
+                        ================================ -->
+
+                        <div
+                            class="food-life-preview full-width"
+                            id="foodLifePreview"
+                        >
+
+                            <div class="preview-icon">
+                                ⏳
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    Estimated Food Life
+                                </span>
+
+                                <strong id="previewLifeText">
+                                    Select a food and storage location
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             IMAGE
+                        ================================ -->
+
+                        <div class="form-group full-width">
+
+                            <label for="foodImage">
+                                Food Image
+                                <span class="optional">
+                                    Optional
+                                </span>
+                            </label>
+
+                            <input
+                                type="file"
+                                id="foodImage"
+                                name="foodImage"
+                                accept="image/*"
+                            >
+
+                            <div
+                                class="image-preview"
+                                id="imagePreview"
+                            ></div>
+
+                        </div>
+
+
+                        <!-- ===============================
+                             FORM ACTIONS
+                        ================================ -->
+
+                        <div class="form-actions full-width">
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                id="cancelFoodBtn"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="primary-btn"
+                                id="saveFoodBtn"
+                            >
+                                <i class="fa-solid fa-plus"></i>
+                                Add Food
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             USE FIRST
+        ================================================== -->
+
+        <section
+            class="section use-first-section"
+            id="use-first"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            PRIORITY
+                        </span>
+
+                        <h2>
+                            Use First
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Foods that need your attention soon.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="use-first-list"
+                    id="useFirstList"
+                >
+
+                    <!-- JavaScript will add items here -->
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            🍽️
+                        </div>
+
+                        <h3>
+                            Nothing to use first
+                        </h3>
+
+                        <p>
+                            Add some food to your pantry.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MY PANTRY
+        ================================================== -->
+
+        <section
+            class="section pantry-section"
+            id="my-pantry"
+        >
+
+            <div class="container">
+
+                <div class="section-heading pantry-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            YOUR FOOD
+                        </span>
+
+                        <h2>
+                            My Pantry
+                        </h2>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="primary-btn small-btn"
+                        id="emptyAddBtn"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Add Food
+                    </button>
+
+                </div>
+
+
+                <!-- Search -->
+
+                <div class="pantry-toolbar">
+
+                    <div class="pantry-search">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="pantrySearch"
+                            placeholder="Search your pantry..."
+                        >
+
+                        <button
+                            type="button"
+                            id="clearPantrySearch"
+                            class="clear-search"
+                            aria-label="Clear search"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Filters -->
+
+                    <div class="filter-buttons">
+
+                        <button
+                            type="button"
+                            class="filter-btn active"
+                            data-filter="all"
+                        >
+                            All
+                        </button>
+
+                        <button
+                            type="button"
+                            class="filter-btn"
+                            data-filter="fresh"
+                        >
+                            Fresh
+                        </button>
+
+                        <button
+                            type="button"
+                            class="filter-btn"
+                            data-filter="expiring"
+                        >
+                            Expiring
+                        </button>
+
+                        <button
+                            type="button"
+                            class="filter-btn"
+                            data-filter="expired"
+                        >
+                            Expired
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Pantry Items -->
+
+                <div
+                    class="pantry-list"
+                    id="pantryList"
+                >
+
+                    <!-- JavaScript will render food cards here -->
+
+                    <div class="empty-state pantry-empty">
+
+                        <div class="empty-icon">
+                            🥕
+                        </div>
+
+                        <h3>
+                            Your pantry is empty
+                        </h3>
+
+                        <p>
+                            Add your first food item to get started.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="primary-btn"
+                            id="pantryEmptyAddBtn"
+                        >
+                            <i class="fa-solid fa-plus"></i>
+                            Add Your First Food
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FOOD LIFE SEARCH
+        ================================================== -->
+
+        <section
+            class="section food-life-section"
+            id="food-life"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">
+                        FOOD KNOWLEDGE
+                    </span>
+
+                    <h2>
+                        How Long Does Food Last?
+                    </h2>
+
+                    <p>
+                        Search a food to see its typical storage life
+                        without needing to enter an expiry date.
+                    </p>
+
+                </div>
+
+
+                <!-- Food Life Search -->
+
+                <div class="food-life-search-box">
+
+                    <div class="search-input-wrapper">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="foodLifeSearch"
+                            placeholder="Search food... e.g. Milk"
+                            autocomplete="off"
+                        >
+
+                        <button
+                            type="button"
+                            id="clearFoodSearch"
+                            class="clear-search"
+                            aria-label="Clear food search"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Suggestions -->
+
+                    <div
+                        class="food-life-suggestions"
+                        id="foodLifeSuggestions"
+                    ></div>
+
+                </div>
+
+
+                <!-- Food Life Result -->
+
+                <div
+                    class="food-life-result"
+                    id="foodLifeResult"
+                >
+
+                    <div class="food-life-placeholder">
+
+                        <div class="large-food-icon">
+                            🥛
+                        </div>
+
+                        <h3>
+                            Search for a food
+                        </h3>
+
+                        <p>
+                            For example, search for
+                            <strong>Milk</strong>
+                            to see its typical storage life.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORY SECTION
+        ================================================== -->
+
+        <section
+            class="section category-section"
+            id="categories"
+        >
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Food Categories
+                    </h2>
+
+                </div>
+
+
+                <div class="category-grid">
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="vegetables"
+                    >
+                        <span>🥦</span>
+                        <strong>Vegetables</strong>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="fruits"
+                    >
+                        <span>🍎</span>
+                        <strong>Fruits</strong>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="dairy"
+                    >
+                        <span>🥛</span>
+                        <strong>Dairy</strong>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="meat"
+                    >
+                        <span>🍗</span>
+                        <strong>Meat</strong>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="seafood"
+                    >
+                        <span>🐟</span>
+                        <strong>Seafood</strong>
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="category-card"
+                        data-category="bakery"
+                    >
+                        <span>🍞</span>
+                        <strong>Bakery</strong>
+                    </button>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL
+    ====================================================== -->
+
+    <div
+        class="modal-overlay"
+        id="modalOverlay"
+    >
+
+        <div
+            class="modal"
+            id="modal"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close modal"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalContent">
+                <!-- JavaScript inserts content -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <div
+            class="toast-icon"
+            id="toastIcon"
+        >
+            ✓
+        </div>
+
+        <div class="toast-content">
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Food added successfully.
+            </p>
+
+        </div>
+
+        <button
+            type="button"
+            class="toast-close"
+            id="toastClose"
+            aria-label="Close notification"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <div class="logo">
+
+                    <span class="logo-icon">
+                        🍱
+                    </span>
+
+                    <span class="logo-text">
+                        Pantry<span>Pal</span>
+                    </span>
+
+                </div>
+
+                <p>
+                    Plan better. Store smarter. Waste less.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#add-food">
+                    Add Food
+                </a>
+
+                <a href="#my-pantry">
+                    My Pantry
+                </a>
+
+                <a href="#food-life">
+                    Food Life
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 PantryPal
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         
+         IMPORTANT:
+         Database is inside data folder.
+         Therefore the path MUST be:
+         data/foodDatabase.js
+    ====================================================== -->
+
+    <script src="data/foodDatabase.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
